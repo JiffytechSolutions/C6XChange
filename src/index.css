@@ -1,13 +1,71 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+ 
+}
+.login-container {
+  max-height: 100vh;
+  height: 100vh;
+  display: table;
+  width: 100%;
+  background-image: url('./assets/images/Login-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.login-content {
+  display: table-cell;
+  vertical-align: middle;
+}
+.login-form-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 55px auto;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.login-form_left {
+  flex: 0 0 40%;
+  padding: 45px;
+}
+.login-form_right {
+  flex: 0 0 60%;
+  background: #000;
+}
+.login-form_right img {
+  display: block;
+  padding: 60px;
+  width: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.login-form_left_header {
+  margin-bottom: 29px;
+}
+.login-form_left_header h1 {
+  font-size: 22px;
+  line-height: 40px;
+  font-weight: normal;
+  margin-bottom: 8px;
+  margin-top: 10px;
+}
+.login-form_left_header h1 span {
+  font-weight: bold;
+}
+.login-form_left_header p {
+  font-size: 15px;
+}
+
+.login-form_left_divider {
+  text-align: center;
+}
+.login-form_left_divider > span {
+  display: inline-block;
+  background: #fff;
+  position: relative;
+  top: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  color: #A9A9A9;
 }
