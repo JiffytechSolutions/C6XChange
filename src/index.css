@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
- 
+  background-color: #040405;
 }
 .login-container {
   max-height: 100vh;
@@ -79,4 +79,27 @@ body {
   padding-left: 8px;
   padding-right: 8px;
   color: #A9A9A9;
+}
+
+/* Sidebar   */
+.jf-sideBar {
+  background-color: #111111 !important;
+  border-color: #111111 !important;
+}
+.jf-sidebar-header {
+  border-bottom: none !important;
+}
+.jf-sidebar-footer {
+  display: none;
+}
+/* Top bar */
+.jiffyui-topbar__wrapper .topbar-container {
+  background: #242424;
+  border: none;
+}
+
+/* Dashboard */
+.jiffyui-main__content {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
 }

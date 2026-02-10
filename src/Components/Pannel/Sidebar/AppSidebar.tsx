@@ -2,7 +2,7 @@ import { SideBar } from 'jiffy-ui';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { menuData } from './MenuItem';
-import logo from '../../../assets/images/black-logo.png'
+import logo from '../../../assets/images/white-logo.png'
 
 const AppSidebar = () => {
     const navigate = useNavigate();

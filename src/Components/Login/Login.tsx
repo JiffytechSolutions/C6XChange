@@ -16,7 +16,7 @@ const Login = () => {
     // Redirect to dashboard if already authenticated
     useEffect(() => {
         if (isAuthenticated) {
-            navigate('/dashboard');
+            navigate('/C6XChange/dashboard');
         }
     }, [isAuthenticated, navigate]);
 
@@ -30,7 +30,7 @@ const Login = () => {
 
         const isSuccess = login(email, password);
         if (isSuccess) {
-            navigate('/dashboard');
+            navigate('/C6XChange/dashboard');
         } else {
             setError('Invalid username or password');
         }
@@ -39,7 +39,7 @@ const Login = () => {
     return (
         <div className='login-container'>
             <div className='login-back-link'>
-                <Link to="/" style={{ 
+                <Link to="/C6XChange" style={{ 
                     color: '#667eea', 
                     textDecoration: 'none', 
                     fontSize: '16px',

@@ -22,6 +22,8 @@ function App() {
               </ProtectedRoute>
             } 
           />
+          {/* Redirect root to /C6XChange */}
+          <Route path="/" element={<Navigate to="/C6XChange" replace />} />
         </Routes>
       </div>
     </AuthProvider>

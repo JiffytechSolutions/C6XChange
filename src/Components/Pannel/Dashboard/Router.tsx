@@ -5,8 +5,7 @@ import Dashboard from './Dashboard';
 const Router = () => {
     return (
         <Routes>
-            <Route path="/" element={<Navigate to="/dashboard" replace />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/" element={<Dashboard />} />
         </Routes>
     );
 };

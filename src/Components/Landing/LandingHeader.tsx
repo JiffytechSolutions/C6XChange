@@ -26,7 +26,7 @@ const LandingHeader = () => {
                     <Button 
                         variant='Secondary' 
                         onClick={() => navigate('/C6XChange/login')}
-                        
+                       
                     >
                         Login
                     </Button>

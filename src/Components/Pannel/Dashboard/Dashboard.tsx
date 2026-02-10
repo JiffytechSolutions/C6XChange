@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../../../context/AuthContext';
+import { DummySummaryCards } from './components/SummaryCard';
+import { Card, FlexLayout, FlexLayoutItem, PageTitle } from 'jiffy-ui';
+import ChartSummary from './components/ChartSummary';
+import GreenScore from './components/GreenScore';
 
 const Dashboard = () => {
     const { username } = useAuth();
@@ -15,25 +19,22 @@ const Dashboard = () => {
     }, []);
 
     return (
-        <div style={{ padding: '20px' }}>
-            <h1>Dashboard</h1>
-            <div style={{ 
-                marginTop: '20px', 
-                padding: '20px', 
-                backgroundColor: '#f5f5f5', 
-                borderRadius: '8px',
-                border: '1px solid #e0e0e0'
-            }}>
-                <h2 style={{ marginBottom: '10px' }}>Welcome back!</h2>
-                <p style={{ fontSize: '16px', marginBottom: '8px' }}>
-                    <strong>Username:</strong> {username || 'Guest'}
-                </p>
-                {loginTime && (
-                    <p style={{ fontSize: '14px', color: '#666' }}>
-                        <strong>Last Login:</strong> {loginTime}
-                    </p>
-                )}
-            </div>
+        
+           <div>
+            <PageTitle title="Dashboard" subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's" />
+            <DummySummaryCards />
+            <FlexLayout>
+                <FlexLayoutItem cols={{ sm: '12', md: '12', lg: '8', xl: '8'}}>
+                    <Card>
+                        <ChartSummary />
+                    </Card>
+                </FlexLayoutItem>
+                <FlexLayoutItem cols={{ sm: '12', md: '12', lg: '4', xl: '4'}}>
+                    <GreenScore />
+                </FlexLayoutItem>
+            </FlexLayout>
+           
+            
         </div>
     );
 };

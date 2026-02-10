@@ -1,0 +1,36 @@
+:root {
+    --primary-color: #667eea;
+    --secondary-color: #764ba2;
+    --background-color: #0a0e27;
+    --text-color: #ffffff;
+    --border-color: #e2e8f0;
+    --card-color: #212121;
+    --card-border-color: #667eea;
+    --card-shadow-color: #667eea;
+    --card-shadow-color: #667eea;
+}
+
+.jf-sideBar {
+    background-color: var(--background-color) !important;
+}
+.jf-sideBar__label{
+    color: var(--text-color) !important;
+}
+.pagetitle {
+    margin-top: 10px !important;
+    margin-bottom: 31px !important;
+}
+.pagetitle-title {
+    font-size: 32px !important;
+    line-height: 35px !important;
+    color: #fff !important;
+    margin-bottom: 5px !important;
+}
+.pagetitle-subtitle {
+    font-size: 15px !important;
+}
+
+.jf-card--default {
+    background-color: var(--card-color) !important;
+    border: none !important;
+}
