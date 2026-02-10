@@ -5,19 +5,19 @@ import { Button, Dropdown, TopBar } from 'jiffy-ui';
 
 
 const AppTopbar = () => {
-    const { logout } = useAuth();
+    const { logout, username } = useAuth();
     const navigate = useNavigate();
 
     const handleLogout = () => {
         logout();
-        navigate('/login');
+        navigate('/');
     };
 
     const userMenu = (
         <div style={{ padding: "8px", minWidth: "200px" }}>
           <div style={{ padding: "12px", borderBottom: "1px solid #eee", marginBottom: "8px" }}>
-            <strong>John Doe</strong>
-            <div style={{ fontSize: "12px", color: "#666" }}>john.doe@example.com</div>
+            <strong>{username || 'User'}</strong>
+            <div style={{ fontSize: "12px", color: "#666" }}>Logged in</div>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
             <button style={{ padding: "8px 12px", border: "none", background: "none", textAlign: "left", cursor: "pointer" }}>

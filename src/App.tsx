@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import Panel from './Components/Pannel/Panel';
 import Login from './Components/Login/Login';
+import LandingPage from './Components/Landing/LandingPage';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute';
 
@@ -11,16 +12,16 @@ function App() {
     <AuthProvider>
       <div className="App">
         <Routes>
+          <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<Login />} />
           <Route 
-            path="/*" 
+            path="/dashboard/*" 
             element={
               <ProtectedRoute>
                 <Panel />
               </ProtectedRoute>
             } 
           />
-          <Route path="/" element={<Navigate to="/dashboard" replace />} />
         </Routes>
       </div>
     </AuthProvider>

@@ -1,6 +1,6 @@
 import { Button, Checkbox, Divider, TextField, VerticalStack } from 'jiffy-ui';
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import loginImage from '../../assets/images/login.png';
 import logo from '../../assets/images/black-logo.png';
@@ -38,6 +38,19 @@ const Login = () => {
 
     return (
         <div className='login-container'>
+            <div className='login-back-link'>
+                <Link to="/" style={{ 
+                    color: '#667eea', 
+                    textDecoration: 'none', 
+                    fontSize: '16px',
+                    fontWeight: '500',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '5px'
+                }}>
+                    ← Back to Home
+                </Link>
+            </div>
             <div className='login-content'>
                 <div className='login-form-container'>
                     <div className='login-form_left'>
