@@ -12,10 +12,10 @@ function App() {
     <AuthProvider>
       <div className="App">
         <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/C6XChange" element={<LandingPage />} />
+          <Route path="/C6XChange/login" element={<Login />} />
           <Route 
-            path="/dashboard/*" 
+            path="/C6XChange/dashboard/*" 
             element={
               <ProtectedRoute>
                 <Panel />
