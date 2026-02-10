@@ -25,13 +25,13 @@ const LandingHeader = () => {
                 <div className='landing-header-actions'>
                     <Button 
                         variant='Secondary' 
-                        onClick={() => navigate('/login')}
+                        onClick={() => navigate('/C6XChange/login')}
                         
                     >
                         Login
                     </Button>
                     <Button 
-                        onClick={() => navigate('/login')}
+                        onClick={() => navigate('/C6XChange/login')}
                        
                     >
                         Register
