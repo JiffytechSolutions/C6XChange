@@ -1,5 +1,6 @@
 import React from 'react';
 import './SummaryCard.css';
+import { Card } from 'jiffy-ui';
 
 interface SummaryCardProps {
   title: string;
@@ -20,23 +21,25 @@ const SummaryCard: React.FC<SummaryCardProps> = ({
   color = '#667eea'
 }) => {
   return (
-    <div className="summary-card">
-      <div className="summary-card-header">
-        <div className="summary-card-icon" style={{ backgroundColor: color }}>
-          {icon}
-        </div>
-        <div className="summary-card-title">{title}</div>
-      </div>
-      <div className="summary-card-content">
-        <div className="summary-card-value">{value}</div>
-        {trend && (
-          <div className={`summary-card-trend ${trend.isPositive ? 'positive' : 'negative'}`}>
-            <span className="trend-arrow">{trend.isPositive ? '↑' : '↓'}</span>
-            <span className="trend-value">{trend.value}</span>
+    <Card>
+      <div className="summary-card">
+        <div className="summary-card-header">
+          <div className="summary-card-icon" style={{ backgroundColor: color }}>
+            {icon}
           </div>
-        )}
+          <div className="summary-card-title">{title}</div>
+        </div>
+        <div className="summary-card-content">
+          <div className="summary-card-value">{value}</div>
+          {trend && (
+            <div className={`summary-card-trend ${trend.isPositive ? 'positive' : 'negative'}`}>
+              <span className="trend-arrow">{trend.isPositive ? '↑' : '↓'}</span>
+              <span className="trend-value">{trend.value}</span>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </Card>
   );
 };
 

@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../../../context/AuthContext';
 import { DummySummaryCards } from './components/SummaryCard';
-import { Card, FlexLayout, FlexLayoutItem, PageTitle } from 'jiffy-ui';
+import { Card, FlexLayout, FlexLayoutItem, PageTitle, VerticalStack } from 'jiffy-ui';
 import ChartSummary from './components/ChartSummary';
 import GreenScore from './components/GreenScore';
+import AvailableCredit from './components/AvailableCredit';
+import RecentPurchaseCard from './components/RecentPurchaseCard';
+import ComplianceMetrics from './components/ComplianceMetrics';
+import TokenHolding from './components/TokenHolding';
+import EnvironmentalImpact from './components/EnvironmentalImpact';
 
 const Dashboard = () => {
     const { username } = useAuth();
@@ -20,21 +25,30 @@ const Dashboard = () => {
 
     return (
         
-           <div>
+        <div className='dashboard-container'>
             <PageTitle title="Dashboard" subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's" />
             <DummySummaryCards />
-            <FlexLayout>
+            <FlexLayout align={{sm: 'start', md: 'start', lg: 'start', xl: 'start'}}>
                 <FlexLayoutItem cols={{ sm: '12', md: '12', lg: '8', xl: '8'}}>
-                    <Card>
-                        <ChartSummary />
-                    </Card>
+                    <VerticalStack gap={5}>
+                        
+                            <ChartSummary />
+                        
+                        <AvailableCredit />
+                        <Card header={{title: 'Recent Purchases'}}>
+                            <RecentPurchaseCard />
+                        </Card>
+                    </VerticalStack>
                 </FlexLayoutItem>
                 <FlexLayoutItem cols={{ sm: '12', md: '12', lg: '4', xl: '4'}}>
-                    <GreenScore />
+                    <VerticalStack gap={5}>
+                        <GreenScore />
+                        <ComplianceMetrics />
+                        <TokenHolding />
+                        <EnvironmentalImpact />
+                    </VerticalStack>
                 </FlexLayoutItem>
             </FlexLayout>
-           
-            
         </div>
     );
 };

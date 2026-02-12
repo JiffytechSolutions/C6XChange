@@ -1,5 +1,6 @@
 import React from 'react';
 import './GreenScore.css';
+import { Card } from 'jiffy-ui';
 
 interface GreenScoreProps {
   score?: number;
@@ -29,11 +30,12 @@ const GreenScore: React.FC<GreenScoreProps> = ({ score = 85, maxScore = 100 }) =
   ];
 
   return (
+    <Card header={{title: 'Green Score'}}>
     <div className="green-score-container">
-      <div className="green-score-header">
+      {/* <div className="green-score-header">
         <h3 className="green-score-title">Green Score</h3>
         <p className="green-score-subtitle">Your environmental impact</p>
-      </div>
+      </div> */}
 
       <div className="green-score-content">
         <div className="score-circle-wrapper">
@@ -95,6 +97,7 @@ const GreenScore: React.FC<GreenScoreProps> = ({ score = 85, maxScore = 100 }) =
         </div>
       </div>
     </div>
+    </Card>
   );
 };
 

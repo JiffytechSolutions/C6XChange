@@ -99,7 +99,35 @@ body {
 }
 
 /* Dashboard */
+.dashboard-container {
+  max-width: 1300px;
+  margin: 0px auto;
+}
 .jiffyui-main__content {
   padding-left: 30px !important;
   padding-right: 30px !important;
+}
+
+.compliance-metrics-item-progress-bar .jf-progress-val, 
+.compliance-metrics-item-progress-bar .jf-progress-label {
+  color: #fff;
+}
+
+.environmental-impact-content-item {
+  padding: 20px 15px;
+  background: #333;
+}
+.environmental-impact-content-item:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.environmental-impact-content-item:last-child {
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.environmental-impact-content-item:nth-child(2n+1) {
+  background: #3D3D3D;
+}
+.environmental-impact-content-item p {
+  color: #ffdf;
 }

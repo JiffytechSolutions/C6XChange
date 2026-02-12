@@ -1,4 +1,4 @@
-.green-score-container {
+/* .green-score-container {
   background: var(--card-color, #1a1f3a);
   border: 2px solid var(--card-border-color, #667eea);
   border-radius: 16px;
@@ -12,11 +12,11 @@
 
 .green-score-container:hover {
   box-shadow: 0 12px 24px rgba(102, 126, 234, 0.2);
-}
+} */
 
-.green-score-header {
+/* .green-score-header {
   margin-bottom: 24px;
-}
+} */
 
 .green-score-title {
   font-size: 20px;

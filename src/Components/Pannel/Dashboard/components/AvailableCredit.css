@@ -1,0 +1,55 @@
+h3.jf-card-header-title {
+  font-size: 22px;
+  color: #fff;
+  font-weight: normal;
+}
+.jf-card-header {
+  border-bottom: 1px solid #2c2b2b;
+  padding-bottom: 20px !important;
+}
+.jf-card-header, .jf-card-body, .jf-card-footer {
+  padding: 20px !important;
+}
+.credit-limit-item {
+  background: #313131;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+.credit-limit-item-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 25px;
+}
+
+.credit-limit-item-label {
+  margin-bottom: 5px;
+}
+.credit-limit-item-label > h4 {
+  font-size: 18px !important;
+  color: #fff;
+}
+
+.credit-limit-item-content .jf-unList--disc__style {
+  margin-bottom: 2px;
+}
+
+.credit-limit-item-content .jf-unList--disc__style li::before{
+  display: none;
+}
+.credit-limit-item-content .jf-unList--disc__style li {
+  display: inline-block;
+  list-style: none;
+  margin-right: 15px;
+  padding-left: 0 !important;
+}
+.credit-limit-item-content .jf-unList--disc__style li svg {
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.credit-limit-item-value h2 {
+  color: #fff;
+}
