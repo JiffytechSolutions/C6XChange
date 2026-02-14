@@ -15,10 +15,7 @@ body {
   position: relative;
 }
 .login-back-link {
-  position: absolute;
-  top: 20px;
-  left: 30px;
-  z-index: 10;
+text-align: center;
 }
 .login-back-link a:hover {
   color: #764ba2;
@@ -93,19 +90,48 @@ body {
   display: none;
 }
 /* Top bar */
-.jiffyui-topbar__wrapper .topbar-container {
+.jiffyui-topbar__wrapper .topbar-container,
+.jiffyui-topbar__wrapper .topbar-container:hover {
   background: #242424;
   border: none;
 }
-
+.jiffyui-topbar__wrapper .topbar-container::before {
+  background: #242424;
+  border: none;
+}
+.jiffyui-content_wrapper {
+  min-height: calc(100vh - 100px) !important;
+  height: auto !important;
+  padding-bottom: 70px;
+}
+.user-menu-container > button:hover {
+  background-color: rgba(0,0,0,0.2);
+  border-color: rgba(0,0,0,0.2);
+}
+.user-menu-container > button .jf-btn-suffix-icon svg path {
+  fill: #a39595;
+  /* color: #fff; */
+}
+.connect-left-action > button.jf-btn:hover {
+  background: transparent !important;
+  border-color: transparent !important;
+}
+.connect-left-action button svg {
+  width: 25px;
+  height: 25px;
+}
+.connect-left-action button path {
+  fill: #fff;
+}
 /* Dashboard */
-.dashboard-container {
+.box-container {
   max-width: 1300px;
   margin: 0px auto;
 }
 .jiffyui-main__content {
   padding-left: 30px !important;
   padding-right: 30px !important;
+  position: relative;
 }
 
 .compliance-metrics-item-progress-bar .jf-progress-val, 
@@ -130,4 +156,42 @@ body {
 }
 .environmental-impact-content-item p {
   color: #ffdf;
+}
+
+
+.jf-table__wrapper {
+  border-color: #4a4a4a !important;
+}
+.jf-table__heading {
+  background: #413737 !important;
+  color: #fff;
+  border-color: #4a4a4a !important;
+}
+
+.jf-table__heading-title {
+  color: #fff !important;
+}
+.jf-table tbody tr:nth-child(2n+1) td {
+  background: #2A2A2A;
+  border-color: #2A2A2A;
+}
+.jf-table tbody tr td {
+  background: #222222;
+  color: #fff;
+  border-color: #222222;
+}
+
+
+.jiffyui-footer__wrapper {
+  background: #1F1F1F;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 24px 20px;
+}
+
+
+/* configuration */
+.inverse-color {
+  color: #fff;
 }

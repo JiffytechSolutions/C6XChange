@@ -1,20 +1,30 @@
 /* Dark Theme Landing Page */
 .landing-container-dark {
     min-height: 100vh;
-    background: #0a0e27;
+    background: #fff;
     color: #ffffff;
 }
 
 /* Dark Header */
 .landing-header-dark {
-    background: rgba(15, 20, 45, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(102, 126, 234, 0.1);
-    position: sticky;
+  
+    position: fixed;
     top: 0;
     z-index: 1000;
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+    padding: 30px 0;
+   
+    width: 100%;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+/* Active state when scrolled */
+.landing-header-dark.active {
+    background: #fff;
+    
+    box-shadow: 0 2px 20px rgba(102, 126, 234, 0.1);
+   
+    padding: 22px 0;
 }
 
 .landing-header-content {
@@ -27,8 +37,18 @@
 }
 
 .landing-logo img {
-    height: 40px;
+    height: 50px;
     cursor: pointer;
+    display: none
+}
+.landing-logo img.logo-white {
+    display: block;
+}
+.landing-header-dark.active .landing-logo img.logo-white {
+    display: none;
+}
+.landing-header-dark.active .landing-logo img {
+    display: block;
 }
 
 .landing-nav-dark {
@@ -71,13 +91,58 @@
     gap: 15px;
 }
 
+.landing-header-dark.active .nav-link-dark {
+    color: #000;
+}
+
+
+.landing-header-actions button,
+.hero-section button {
+    padding: 12px 25px;
+}
+
+.landing-header-actions button.jf-btn--Secondary,
+.landing-header-actions button.jf-btn--Secondary:hover,
+.hero-section button.jf-btn--Secondary,
+.hero-section button.jf-btn--Secondary:hover {
+    background: transparent;
+    color: #fff;
+}
+.landing-header-actions button.jf-btn--primary,
+.landing-header-actions button.jf-btn--primary:hover,
+.hero-section button.jf-btn--primary,
+.hero-section button.jf-btn--primary:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+}
+.landing-header-dark.active .landing-header-actions button.jf-btn--primary,
+.landing-header-dark.active .landing-header-actions button.jf-btn--primary:hover {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.landing-header-dark.active .landing-header-actions button.jf-btn--Secondary,
+.landing-header-dark.active .landing-header-actions button.jf-btn--Secondary:hover {
+    background: transparent;
+    color: #000;
+    border-color: #000;
+}
 /* Hero Section */
 .hero-section {
-    padding: 100px 20px 80px;
+    padding: 210px 20px 216px;
     text-align: center;
-    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+    /* background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%); */
     position: relative;
     overflow: hidden;
+    background-image: url(http://localhost:3000/C6XChange/static/media/home-bg.e6b1402f20e8a9eaa310.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* min-height: 100vh; */
+    /* display: table; */
+    /* width: 100%; */
 }
 
 .hero-section::before {
@@ -94,25 +159,26 @@
 }
 
 .hero-content {
-    max-width: 900px;
+    max-width: 1300px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
+
 }
 
 .hero-title {
-    font-size: 56px;
+    font-size: 80px;
     font-weight: 700;
     margin-bottom: 25px;
-    line-height: 1.2;
+    line-height: 1.4;
     color: #ffffff;
 }
 
 .gradient-text {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background-clip: text; */
 }
 
 .hero-subtitle {
@@ -135,7 +201,7 @@
 /* Stats Section */
 .stats-section {
     padding: 60px 20px;
-    background: #0f142d;
+    /* background: #0f142d; */
 }
 
 .stats-container {
@@ -144,17 +210,19 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
+    margin-top: -130px;
+    position: relative;
 }
 
 .stat-card {
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-    border: 1px solid rgba(102, 126, 234, 0.2);
+    background: #fff;
     border-radius: 16px;
     padding: 30px;
     display: flex;
     align-items: center;
     gap: 20px;
     transition: all 0.3s ease;
+    box-shadow: 0px 15px 40px rgba(1, 18, 111, 0.15);
 }
 
 .stat-card:hover {
@@ -164,8 +232,8 @@
 }
 
 .stat-icon {
-    font-size: 48px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-size: 33px;
+    background: linear-gradient(135deg, #0a0b0c 0%, #201928 100%);
     width: 70px;
     height: 70px;
     display: flex;
@@ -184,10 +252,10 @@
 }
 
 .stat-value {
-    font-size: 32px;
+    font-size: 25px;
     font-weight: 700;
-    color: #ffffff;
-    margin: 5px 0;
+    color: #000;
+    margin: 10px 0;
 }
 
 .stat-change {
@@ -206,7 +274,7 @@
 /* Trust Section */
 .trust-section {
     padding: 80px 20px;
-    background: #0a0e27;
+    /* background: #0a0e27; */
 }
 
 .section-header {
@@ -217,13 +285,13 @@
 .section-title {
     font-size: 42px;
     font-weight: 700;
-    margin-bottom: 15px;
-    color: #ffffff;
+    margin-bottom: 30px;
+    color: #000000;
 }
 
 .section-subtitle {
-    font-size: 18px;
-    color: #94a3b8;
+    font-size: 17px;
+    color: #6e6e6e;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -237,13 +305,13 @@
 }
 
 .trust-card {
-    background: linear-gradient(135deg, rgba(15, 20, 45, 0.8) 0%, rgba(26, 31, 58, 0.8) 100%);
-    border: 1px solid rgba(102, 126, 234, 0.15);
+    background: #fff;
     border-radius: 16px;
     padding: 35px;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    box-shadow: 0px 25px 40px rgba(28, 46, 158, 0.1);
 }
 
 .trust-card::before {
@@ -253,7 +321,7 @@
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #000;
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
@@ -264,14 +332,14 @@
 
 .trust-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(102, 126, 234, 0.4);
+    border-color: rgba(6, 8, 14, 0.4);
     box-shadow: 0 15px 40px rgba(102, 126, 234, 0.15);
 }
 
 .trust-icon {
-    font-size: 48px;
+    font-size: 32px;
     margin-bottom: 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #0a0b0c 0%, #201928 100%);
     width: 70px;
     height: 70px;
     display: flex;
@@ -279,31 +347,39 @@
     justify-content: center;
     border-radius: 12px;
 }
-
 .trust-card h3 {
     font-size: 22px;
     margin-bottom: 15px;
-    color: #ffffff;
+    color: #000;
     font-weight: 600;
 }
 
 .trust-card p {
     font-size: 15px;
     line-height: 1.7;
-    color: #94a3b8;
+    color: #767676;
 }
 
 /* CTA Section */
-.cta-section {
+/* .cta-section {
     padding: 80px 20px;
     background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
     text-align: center;
-}
+} */
 
+.cta-content {
+    background: #000;
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 70px;
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 70px;
+}
 .cta-content h2 {
     font-size: 42px;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 31px;
     color: #ffffff;
 }
 
@@ -315,8 +391,8 @@
 
 /* Footer Dark */
 .landing-footer-dark {
-    background: #0f142d;
-    padding: 60px 20px 20px;
+    background: #090a0b;
+    padding: 80px 20px 20px;
     border-top: 1px solid rgba(102, 126, 234, 0.1);
 }
 
@@ -326,7 +402,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 70px;
 }
 
 .footer-section h3 {
@@ -345,6 +421,7 @@
 .footer-section p {
     color: #94a3b8;
     line-height: 1.6;
+    font-size: 15px;
 }
 
 .footer-section ul {
@@ -361,6 +438,7 @@
     color: #94a3b8;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-size: 15px;
 }
 
 .footer-section ul li a:hover {
@@ -375,6 +453,10 @@
     font-size: 14px;
 }
 
+.footer-bottom p {
+    color: #fff;
+    font-size: 15px;
+}
 /* Responsive Design */
 @media (max-width: 768px) {
     .landing-nav-dark {

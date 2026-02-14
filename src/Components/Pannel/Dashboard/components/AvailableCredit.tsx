@@ -15,7 +15,7 @@ const AvailableCredit: React.FC<AvailableCreditProps> = () => {
   const navigate = useNavigate();
 
   const handleViewMore = () => {
-    navigate('/C6XChange/dashboard/credit-limit');
+    navigate('/dashboard/credit-limit');
   };
 
   return (

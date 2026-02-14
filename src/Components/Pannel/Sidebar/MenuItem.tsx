@@ -18,9 +18,8 @@ export const menuData = [
       {
         id: "tradingFloor",
         label: "Trading Floor",
-        path: "/tradingFloor",
+        path: "/dashboard/credit-limit",
         icon: <TradingFloorIcon />,
-       
       },
       {
         id: "tokenManagement",
@@ -90,7 +89,7 @@ export const menuData = [
     {
       id: "setting",
       label: "Setting",
-      path: "/setting",
+      path: "/dashboard/configuration",
       icon: <BlockChainIcon />,
     },
     {

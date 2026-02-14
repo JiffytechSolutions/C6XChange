@@ -25,7 +25,7 @@ const Dashboard = () => {
 
     return (
         
-        <div className='dashboard-container'>
+        <div className='box-container'>
             <PageTitle title="Dashboard" subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's" />
             <DummySummaryCards />
             <FlexLayout align={{sm: 'start', md: 'start', lg: 'start', xl: 'start'}}>

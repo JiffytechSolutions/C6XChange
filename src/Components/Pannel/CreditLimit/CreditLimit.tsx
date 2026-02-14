@@ -5,7 +5,7 @@ import '../Dashboard/components/AvailableCredit.css';
 
 const CreditLimit: React.FC = () => {
   return (
-    <>
+    <div className='box-container'>
         <PageTitle title='Credit Limit - All Available Credits' />
         <div className='credit-limit-data'>
           {creditLimitData.map((item, index) => (
@@ -76,7 +76,7 @@ const CreditLimit: React.FC = () => {
             </div>
           ))}
         </div>
-    </>
+    </div>
   );
 };
 

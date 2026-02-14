@@ -18,12 +18,12 @@ h3.jf-card-header-title {
 }
 .credit-limit-item-inner {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; 
   align-items: start;
   margin-bottom: 25px;
 }
 
-.credit-limit-item-label {
+.credit-limit-item-label {  
   margin-bottom: 5px;
 }
 .credit-limit-item-label > h4 {

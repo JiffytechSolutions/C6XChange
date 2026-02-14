@@ -1,7 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../context/AuthContext';
-import { Button, Dropdown, TopBar } from 'jiffy-ui';
+import { Button, Dropdown, InlineStack, TextStyle, Thumbnail, TopBar, VerticalStack } from 'jiffy-ui';
+import user from '../../../assets/images/user.png';
+import { ChevronDown, ChevronLeft, Copy, Eye, FileText, List } from 'jiffy-icons';
+import { LogoutIcon } from '../../../assets/Icons';
+// import ActionList from 'jiffy-ui/dist/components/Actionlist/Actionlist';
 
 
 const AppTopbar = () => {
@@ -10,8 +14,52 @@ const AppTopbar = () => {
 
     const handleLogout = () => {
         logout();
-        navigate('/C6XChange');
+        navigate('/');
     };
+
+
+
+    const userMenu1 = [
+      {
+        id: "file-group",
+        title: "File Actions",
+        items: [
+          {
+            id: "new",
+            label: "New File",
+            leading: <FileText size={16} />,
+            onClick: () => alert("New File clicked"),
+          },
+          {
+            id: "open",
+            label: "Open File",
+            leading: <Eye size={16} />,
+            onClick: () => alert("Open File clicked"),
+          },
+        ],
+        separator: true,
+      },
+      {
+        id: "edit-group",
+        title: "Edit Actions",
+        items: [
+          {
+            id: "copy-edit",
+            label: "Copy",
+            leading: <Copy size={16} />,
+            onClick: () => alert("Copy clicked"),
+          },
+          {
+            id: "delete-edit",
+            label: "Delete",
+            leading: LogoutIcon,
+            variant: "destructive" as const,
+            onClick: () => alert("Delete clicked"),
+          },
+        ],
+      },
+    ];
+
 
     const userMenu = (
         <div style={{ padding: "8px", minWidth: "200px" }}>
@@ -36,19 +84,46 @@ const AppTopbar = () => {
           </div>
         </div>
       );
+    
+    const connectLeft = (
+      <div className='connect-left-action'>
+        <Button variant="Ghost" icon={<List />} iconOnly />
+      </div>
+     )
     const connectRight = (
+      <>
+        {/* <ActionList
+          items={userMenu1 as any} // temp type patch, fix types to match ActionList requirement
+          variant="Bordered"
+        >
+          <Button variant="Secondary">
+            File Menu
+          </Button>
+        </ActionList> */}
+         
         <Dropdown content={userMenu} placement="bottom-end">
-            <Button variant="Primary">User Menu</Button>
+          <div className='user-menu-container'>
+            <Button variant="Ghost" suffixIcon={<ChevronDown />}>
+              <InlineStack gap={3} align={"center"} justifyContent={'center'}>
+                <Thumbnail
+                  size='Large'
+                  src={user}
+                  alt={"User login"}
+                />
+                <VerticalStack gap={0}>
+                  <TextStyle variant='heading' size='sm' tone='subdued' as='p' fontWeight='bold'>{'Arvind kumar'}</TextStyle>
+                  <TextStyle variant='body' size='md' tone='subdued' as='p'>{username || 'User'}</TextStyle>
+                </VerticalStack>
+              </InlineStack>
+            </Button>
+            </div>
         </Dropdown>
+        </>
     );
     return (
-       <>
-            {/* <h1>AppTopbar</h1>
-            <Button onClick={handleLogout}>
-                Logout
-            </Button> */}
-            <TopBar title='AppTopbar' connectRight={connectRight} />
-        </>
+      <>
+        <TopBar title='AppTopbar' connectRight={connectRight} connectLeft={connectLeft} />
+      </>
  
     );
 };

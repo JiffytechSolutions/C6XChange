@@ -12,18 +12,16 @@ function App() {
     <AuthProvider>
       <div className="App">
         <Routes>
-          <Route path="/C6XChange" element={<LandingPage />} />
-          <Route path="/C6XChange/login" element={<Login />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<Login />} />
           <Route 
-            path="/C6XChange/dashboard/*" 
+            path="/dashboard/*" 
             element={
               <ProtectedRoute>
                 <Panel />
               </ProtectedRoute>
             } 
           />
-          {/* Redirect root to /C6XChange */}
-          <Route path="/" element={<Navigate to="/C6XChange" replace />} />
         </Routes>
       </div>
     </AuthProvider>

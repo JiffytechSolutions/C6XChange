@@ -16,7 +16,7 @@ const Login = () => {
     // Redirect to dashboard if already authenticated
     useEffect(() => {
         if (isAuthenticated) {
-            navigate('/C6XChange/dashboard');
+            navigate('/dashboard');
         }
     }, [isAuthenticated, navigate]);
 
@@ -30,7 +30,7 @@ const Login = () => {
 
         const isSuccess = login(email, password);
         if (isSuccess) {
-            navigate('/C6XChange/dashboard');
+            navigate('/dashboard');
         } else {
             setError('Invalid username or password');
         }
@@ -38,19 +38,7 @@ const Login = () => {
 
     return (
         <div className='login-container'>
-            <div className='login-back-link'>
-                <Link to="/C6XChange" style={{ 
-                    color: '#667eea', 
-                    textDecoration: 'none', 
-                    fontSize: '16px',
-                    fontWeight: '500',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '5px'
-                }}>
-                    ← Back to Home
-                </Link>
-            </div>
+            
             <div className='login-content'>
                 <div className='login-form-container'>
                     <div className='login-form_left'>
@@ -127,6 +115,19 @@ const Login = () => {
                                 <Button variant='Secondary'  isFullWidth size='Large' icon={<GoogleIcon />} suffixIcon={<GoogleIcon />}  >
                                     Login with Google
                                 </Button>
+                                <div className='login-back-link'>
+                                    <Link to="/" style={{ 
+                                        color: '#667eea', 
+                                        textDecoration: 'none', 
+                                        fontSize: '16px',
+                                        fontWeight: '500',
+                                        display: 'inline-flex',
+                                        alignItems: 'center',
+                                        gap: '5px'
+                                    }}>
+                                        ← Back to Home
+                                    </Link>
+                                </div>
                             </VerticalStack>
                         </div>
                     </div>
