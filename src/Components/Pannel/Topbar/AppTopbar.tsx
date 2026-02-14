@@ -14,7 +14,7 @@ const AppTopbar = () => {
 
     const handleLogout = () => {
         logout();
-        navigate('/');
+        navigate('/C6XChange');
     };
 
 

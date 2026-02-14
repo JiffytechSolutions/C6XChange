@@ -25,7 +25,7 @@ const LandingPage = () => {
                     <div className='hero-actions'>
                         <Button 
                             size='Large' 
-                            onClick={() => navigate('/login')}
+                            onClick={() => navigate('/C6XChange/login')}
                             
                         >
                             Get Started
@@ -143,7 +143,7 @@ const LandingPage = () => {
                     <p>Join thousands of users who trust C6Xchange for their exchange needs</p>
                     <Button 
                         size='Large'
-                        onClick={() => navigate('/login')}
+                        onClick={() => navigate('/C6XChange/login')}
                        
                     >
                         Create Free Account

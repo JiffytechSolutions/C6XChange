@@ -11,14 +11,14 @@ export const menuData = [
     {
         id: "dashboard",
         label: "Dashboard",
-        path: "/dashboard",
+        path: "/C6XChange/dashboard",
         icon: <DashboardIcon />,
        
       },
       {
         id: "tradingFloor",
         label: "Trading Floor",
-        path: "/dashboard/credit-limit",
+        path: "/C6XChange/dashboard/credit-limit",
         icon: <TradingFloorIcon />,
       },
       {
@@ -89,7 +89,7 @@ export const menuData = [
     {
       id: "setting",
       label: "Setting",
-      path: "/dashboard/configuration",
+      path: "/C6XChange/dashboard/configuration",
       icon: <BlockChainIcon />,
     },
     {
