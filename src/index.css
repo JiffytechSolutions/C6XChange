@@ -3,6 +3,17 @@ body {
   padding: 0;
   background-color: #040405;
 }
+
+/* Panel Wrapper Fade-In Animation */
+.panel-wrapper {
+  opacity: 0;
+  transition: opacity 0.8s ease-in;
+}
+
+.panel-wrapper.fade-in {
+  opacity: 1;
+}
+
 .login-container {
   max-height: 100vh;
   height: 100vh;

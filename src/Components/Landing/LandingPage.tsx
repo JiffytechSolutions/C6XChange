@@ -1,14 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'jiffy-ui';
 import LandingHeader from './LandingHeader';
+import PageLoader from '../Loader/PageLoader';
 import './Landing.css';
 
 const LandingPage = () => {
     const navigate = useNavigate();
+    const [isLoading, setIsLoading] = useState(true);
+    const [showContent, setShowContent] = useState(false);
+
+    useEffect(() => {
+        // Hide loader after 4 seconds
+        const loaderTimer = setTimeout(() => {
+            setIsLoading(false);
+        }, 4000);
+
+        // Show content with fade-in after loader starts fading
+        const contentTimer = setTimeout(() => {
+            setShowContent(true);
+        }, 4300); // Slight delay after loader starts fading
+
+        return () => {
+            clearTimeout(loaderTimer);
+            clearTimeout(contentTimer);
+        };
+    }, []);
 
     return (
-        <div className='landing-container-dark'>
+        <>
+            <PageLoader isVisible={isLoading} />
+            <div className={`landing-container-dark ${showContent ? 'fade-in' : ''}`}>
             <LandingHeader />
             
             {/* Hero Section */}
@@ -191,6 +213,7 @@ const LandingPage = () => {
                 </div>
             </footer>
         </div>
+        </>
     );
 };
 
